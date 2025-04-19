@@ -8,7 +8,7 @@ import {
   MdOutlineCheck,
 } from 'react-icons/md';
 import { Message } from '../../types/message';
-import { CHAT_EVENTS, MessageStatus } from '../../types/chat';
+import { CHAT_EVENTS } from '../../types/chat';
 import Markdownify from './Markdownify';
 import { useTranslation } from 'react-i18next';
 import './Typing.scss';
@@ -199,7 +199,8 @@ const ChatMessage: FC<ChatMessageProps> = ({
                                 title: t('global.notification'),
                                 message: t('chat.validations.messageChanged'),
                               });
-                            } catch (_) {
+                            } catch (error) {
+                              console.error(error);
                               toast.open({
                                 type: 'error',
                                 title: t('global.notificationError'),

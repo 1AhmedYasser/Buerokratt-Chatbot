@@ -300,11 +300,7 @@ const Chat: FC<ChatProps> = ({
       message: Message;
       editing: boolean;
     }) => {
-      if (editing) {
-        return apiDev.post('agents/chats/messages/edit', message);
-      } else {
-        return apiDev.post('agents/chats/messages/insert', message);
-      }
+      return apiDev.post(`agents/chats/messages/${editing ? 'edit' : 'insert'}`, message);
     },
     onSuccess: (res: any) => {
       return res.data.response;
@@ -566,6 +562,7 @@ const Chat: FC<ChatProps> = ({
           setMessagesList((oldMessages) => [...oldMessages, message]);
         }
       } catch (error) {
+        console.error(error);
         setMessagesList((oldMessages) => [...oldMessages, newMessage]);
       } finally {
         setResponseText('');
@@ -649,6 +646,7 @@ const Chat: FC<ChatProps> = ({
         return updatedMessages;
       });
     } catch (error) {
+      console.error(error);
       setMessagesList((oldMessages) => [...oldMessages, retryMessage]);
     }
   };
