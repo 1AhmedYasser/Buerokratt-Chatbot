@@ -122,6 +122,7 @@
     "waiting_validation": "Waiting for validation",
     "approved_validation": "Approved Validation",
     "changingMessage": "Changing the message",
+    "messageEdited": "The content of the message has been changed! {{date}}",
     "active": {
       "list": "Active chat list",
       "myChats": "My chats",

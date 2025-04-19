@@ -271,6 +271,13 @@ const ChatMessage: FC<ChatMessageProps> = ({
           </time>
         </span>
       ) : null}{' '}
+      {message.originalBaseId && (
+        <div className="active-chat__message-date">
+          {t('chat.messageEdited', {
+            date: format(new Date(message?.updated ?? new Date()), 'HH:mm:ss'),
+          })}
+        </div>
+      )}
     </div>
   );
 };
