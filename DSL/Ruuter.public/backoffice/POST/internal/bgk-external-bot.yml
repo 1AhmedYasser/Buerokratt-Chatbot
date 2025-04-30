@@ -58,7 +58,7 @@ check_if_client_bot_is_active:
   switch:
     - condition: ${[#BGK_ACTIVE] === true}
       next: assign_data_sources
-  next: get_organization_bot_answer_config
+  next: get_organization_base_config
 
 assign_data_sources:
   assign:
