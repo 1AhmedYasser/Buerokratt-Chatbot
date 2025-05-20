@@ -96,7 +96,7 @@ const FormTextarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             >
               {createRegexRenderer([
                 [
-                  /https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+/g,
+                  /https?:\/\/[-_.!~*'()a-zA-Z0-9;/?:@&=+$,%#]+/g,
                   ({ children, key, value }) => (
                     <a
                       style={{
